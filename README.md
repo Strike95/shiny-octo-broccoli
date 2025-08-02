@@ -198,7 +198,7 @@ All components are **production-ready** with:
 - [Web App Architecture](./Web%20App/README.md)
 
 ### Development Guidelines
-- [Coding Standards](#code-quality-standards)
+- [Coding Standards](#-code-quality-standards)
 - [Docker Best Practices](#docker-first-architecture)
 - [Testing Strategies](#testing-strategy)
 
