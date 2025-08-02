@@ -8,6 +8,12 @@ echo " DOCKER BUILD AND TEST - ARK ENERGY SQL"
 echo "========================================"
 echo ""
 
+# Clean up any existing images to prevent conflicts
+echo "[INFO] Cleaning up existing Docker images..."
+docker rmi ark-energy-sql 2>/dev/null || true
+echo "[INFO] Cleanup completed"
+echo ""
+
 # Check if Docker is installed
 if ! command -v docker &> /dev/null; then
     echo "[ERROR] Docker is not installed or not in PATH"

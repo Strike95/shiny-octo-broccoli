@@ -6,6 +6,12 @@ echo  DOCKER BUILD AND TEST - ARK ENERGY SQL
 echo ========================================
 echo.
 
+REM Clean up any existing images to prevent conflicts
+echo [INFO] Cleaning up existing Docker images...
+docker rmi ark-energy-sql 2>nul
+echo [INFO] Cleanup completed
+echo.
+
 REM Check if Docker is installed
 docker --version >nul 2>&1
 if %errorlevel% neq 0 (
