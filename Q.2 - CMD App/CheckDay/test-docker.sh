@@ -4,6 +4,12 @@
 # This script builds the Docker image and runs tests with various inputs
 
 echo "=== CheckDay Docker Test Script ==="
+
+# Clean up any existing images to prevent conflicts
+echo "[INFO] Cleaning up existing Docker images..."
+docker rmi checkday 2>/dev/null || true
+echo "[INFO] Cleanup completed"
+
 echo "Building Docker image..."
 
 # Build the Docker image

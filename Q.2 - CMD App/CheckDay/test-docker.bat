@@ -2,6 +2,12 @@
 setlocal enabledelayedexpansion
 
 echo === CheckDay Docker Test Script for Windows ===
+
+REM Clean up any existing images to prevent conflicts
+echo [INFO] Cleaning up existing Docker images...
+docker rmi checkday 2>nul
+echo [INFO] Cleanup completed
+
 echo Building Docker image...
 
 docker build -t checkday .
