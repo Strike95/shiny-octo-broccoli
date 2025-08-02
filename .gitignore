@@ -236,3 +236,9 @@ MigrationBackup/
 
 # Docker
 .dockerignore
+
+# Angular build output
+dist/
+public/
+# Angular
+.angular/
