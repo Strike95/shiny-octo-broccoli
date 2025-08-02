@@ -3,6 +3,12 @@
 # Pets Vaccination Docker Test Script for Linux/Mac
 
 echo "=== Pets Vaccination Docker Test Script ==="
+
+# Clean up any existing images to prevent conflicts
+echo "[INFO] Cleaning up existing Docker images..."
+docker rmi pets-vaccination 2>/dev/null || true
+echo "[INFO] Cleanup completed"
+
 echo "Building Docker image for Pets Vaccination Solver..."
 
 # Build the Docker image
