@@ -46,11 +46,11 @@ echo "Test 5: Invalid year (too low)"
 docker run --rm checkday 1800 1
 
 echo ""
-echo "Test 6: Invalid weekday (out of range)"
+echo "Test 6: Invalid weekday (out of range) 8"
 docker run --rm checkday 2024 8
 
 echo ""
-echo "Test 7: Invalid arguments (non-numeric)"
+echo "Test 7: Invalid arguments (non-numeric) abc def"
 docker run --rm checkday abc def
 
 echo ""
