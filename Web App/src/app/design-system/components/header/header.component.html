@@ -1,0 +1,63 @@
+<!-- Skip to main content link for keyboard users (WCAG 2.2 AA) -->
+<a 
+  class="visually-hidden-focusable btn btn-primary position-absolute top-0 start-0 m-2" 
+  (click)="skipToMainContent()"
+  [attr.aria-label]="'NAVIGATION.SKIP_TO_CONTENT' | translate"
+>
+  {{ 'NAVIGATION.SKIP_TO_CONTENT' | translate }}
+</a>
+
+<!-- Main navigation header -->
+<header class="app-header" role="banner">
+  <nav 
+    class="navbar navbar-expand-lg navbar-dark bg-primary" 
+    [attr.aria-label]="'NAVIGATION.MENU' | translate"
+  >
+    <div class="container">
+      <!-- Brand/Logo -->
+      <h1 class="navbar-brand m-0">
+        <a 
+          routerLink="/" 
+          class="text-decoration-none text-white d-flex align-items-center"
+          [attr.aria-label]="'APP.TITLE' | translate"
+        >
+          <i class="bi bi-lightning-charge me-2" aria-hidden="true"></i>
+          <span>{{ brandText() || ('APP.TITLE' | translate) }}</span>
+        </a>
+      </h1>
+      
+      <!-- Mobile menu toggle button -->
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        [attr.aria-controls]="'navbarNav'"
+        [attr.aria-expanded]="isMobileMenuExpanded()"
+        [attr.aria-label]="isMobileMenuExpanded() ? ('NAVIGATION.CLOSE_MENU' | translate) : ('NAVIGATION.MENU' | translate)"
+        (click)="toggleMobileMenu()"
+      >
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
+      
+      <!-- Collapsible navigation content -->
+      <div 
+        class="collapse navbar-collapse" 
+        id="navbarNav"
+        [class.show]="isMobileMenuExpanded()"
+      >
+        <!-- Navigation component (centered for better visual balance) -->
+        <div class="navbar-nav mx-auto">
+          <app-navigation
+            [navigationItems]="navigationItems()"
+            [isMobileMenuExpanded]="isMobileMenuExpanded()"
+            (navigationItemClicked)="onNavigationItemClick($event)"
+          ></app-navigation>
+        </div>
+        
+        <!-- Language selector component (positioned on the right) -->
+        <div class="navbar-nav ms-auto">
+          <app-language-selector></app-language-selector>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

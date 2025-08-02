@@ -1,0 +1,110 @@
+<main id="main-content" 
+      class="container py-5" 
+      role="main"
+      [attr.aria-labelledby]="'page-title'">
+  
+  <!-- Page header -->
+  <header class="mb-5">
+    <h1 id="page-title" class="display-5 fw-bold text-primary mb-3">
+      <i class="bi bi-lightning-fill me-3" aria-hidden="true"></i>
+      {{ 'ELECTRICITY_PRICES.TITLE' | translate }}
+    </h1>
+    <p class="lead text-muted">
+      {{ 'ELECTRICITY_PRICES.DESCRIPTION' | translate }}
+    </p>
+  </header>
+
+  <!-- Loading state -->
+  @if (isLoading()) {
+    <output class="text-center py-5 d-block" aria-live="polite">
+      <span class="spinner-border text-primary mb-3">
+        <span class="visually-hidden">{{ 'COMMON.LOADING' | translate }}</span>
+      </span>
+      <p class="text-muted">{{ 'ELECTRICITY_PRICES.LOADING_DATA' | translate }}</p>
+    </output>
+  }
+
+  <!-- Error state -->
+  @if (error()) {
+    <section class="alert alert-danger" role="alert">
+      <i class="bi bi-exclamation-triangle-fill me-2" aria-hidden="true"></i>
+      <strong>{{ 'COMMON.ERROR' | translate }}:</strong> {{ error() }}
+    </section>
+  }
+
+  <!-- Data table -->
+  @if (!isLoading() && !error() && electricityPrices().length > 0) {
+    <section class="row g-4" [attr.aria-labelledby]="'data-title'">
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h2 id="data-title" class="h5 mb-0">
+              <i class="bi bi-table me-2" aria-hidden="true"></i>
+              {{ 'ELECTRICITY_PRICES.DATA_TABLE' | translate }}
+            </h2>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover mb-0" 
+                     role="table"
+                     [attr.aria-label]="'ELECTRICITY_PRICES.TABLE_ARIA_LABEL' | translate">
+                <thead class="table-dark">
+                  <tr role="row">
+                    @for (column of marketColumns; track column.key) {
+                      <th scope="col" 
+                          class="text-center"
+                          [attr.aria-sort]="'none'">
+                        {{ column.labelKey | translate }}
+                        @if (column.key !== 'year') {
+                          <small class="d-block text-muted">(€/MWh)</small>
+                        }
+                      </th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (price of electricityPrices(); track trackByYear($index, price)) {
+                    <tr role="row" 
+                        class="align-middle"
+                        [attr.aria-rowindex]="$index + 2">
+                      <th scope="row" class="text-center fw-bold">{{ price.year }}</th>
+                      <td class="text-center" [class.table-success]="price.ipex < 50">
+                        {{ formatPrice(price.ipex) }}
+                      </td>
+                      <td class="text-center" [class.table-success]="price.epex_germany < 50">
+                        {{ formatPrice(price.epex_germany) }}
+                      </td>
+                      <td class="text-center" [class.table-success]="price.nord_pool < 50">
+                        {{ formatPrice(price.nord_pool) }}
+                      </td>
+                      <td class="text-center" [class.table-success]="price.omel < 50">
+                        {{ formatPrice(price.omel) }}
+                      </td>
+                      <td class="text-center" [class.table-success]="price.epex_france < 50">
+                        {{ formatPrice(price.epex_france) }}
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer text-muted text-center">
+            <small>
+              <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+              {{ 'ELECTRICITY_PRICES.DATA_SOURCE' | translate }}
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- No data state -->
+  @if (!isLoading() && !error() && electricityPrices().length === 0) {
+    <section class="text-center py-5">
+      <i class="bi bi-inbox display-1 text-muted mb-4" aria-hidden="true"></i>
+      <h2 class="h4 text-muted">{{ 'ELECTRICITY_PRICES.NO_DATA' | translate }}</h2>
+    </section>
+  }
+</main>

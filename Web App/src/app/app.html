@@ -1,0 +1,40 @@
+<!-- Main application header with navigation and language selector -->
+<app-header></app-header>
+
+<!-- Main content area with skip target for accessibility -->
+<main id="main-content" class="d-flex flex-column min-vh-100" tabindex="-1">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer accessibile -->
+<footer class="bg-primary text-light py-4 mt-auto" 
+        role="contentinfo"
+        [attr.aria-label]="'FOOTER.COPYRIGHT' | translate">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h6 class="h6 mb-3 text-white">{{ 'APP.TITLE' | translate }}</h6>
+        <p class="text-white-50 mb-0">
+          {{ 'APP.DESCRIPTION' | translate }}
+        </p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div class="footer-links mb-3">
+          <a href="#" class="text-white text-decoration-none me-3 opacity-75 hover-opacity-100">{{ 'FOOTER.PRIVACY' | translate }}</a>
+          <a href="#" class="text-white text-decoration-none me-3 opacity-75 hover-opacity-100">{{ 'FOOTER.TERMS' | translate }}</a>
+          <a href="#" class="text-white text-decoration-none opacity-75 hover-opacity-100">{{ 'FOOTER.CONTACT' | translate }}</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright -->
+    <hr class="my-3 border-light border-opacity-25">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="text-white-50 mb-0 small">
+          {{ 'FOOTER.COPYRIGHT' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

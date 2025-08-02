@@ -1,0 +1,19 @@
+// ErrorMessage component styles
+.alert {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .bi {
+    fill: currentColor;
+  }
+  
+  strong {
+    font-weight: 600;
+  }
+  
+  small {
+    opacity: 0.8;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,313 @@
+/**
+ * Header component styles
+ * 
+ * Design choices:
+ * - Bootstrap-first approach for responsive design
+ * - WCAG 2.2 AA compliance through high contrast and focus indicators
+ * - CSS custom properties for theme consistency
+ * - Mobile-first responsive design patterns
+ * - Accessibility-focused focus management
+ */
+
+// Component-specific variables using Bootstrap's CSS custom properties
+.app-header {
+  // Ensure header is positioned correctly in layout
+  position: sticky;
+  top: 0;
+  z-index: 1030; // Bootstrap navbar z-index
+  
+  .navbar {
+    // Enhanced accessibility: Ensure sufficient color contrast (WCAG 2.2 AA)
+    --bs-navbar-color: rgba(255, 255, 255, 0.95);
+    --bs-navbar-hover-color: rgba(255, 255, 255, 1);
+    --bs-navbar-active-color: rgba(255, 255, 255, 1);
+    
+    // Custom focus styles for better accessibility
+    .nav-link {
+      position: relative;
+      transition: all 0.2s ease-in-out;
+      
+      // WCAG 2.2 AA: Enhanced focus indicator
+      &:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 2px;
+        border-radius: 0.25rem;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      // Active state styling
+      &.active {
+        font-weight: 600;
+        
+        // Visual indicator for active page (accessibility)
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%;
+          height: 2px;
+          background-color: currentColor;
+          border-radius: 1px;
+        }
+      }
+      
+      // Hover states
+      &:hover:not(.active) {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    // Brand/logo styling
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      
+      a {
+        transition: opacity 0.2s ease-in-out;
+        
+        &:focus-visible {
+          outline: 2px solid #ffffff;
+          outline-offset: 2px;
+          border-radius: 0.25rem;
+        }
+        
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      
+      // Icon styling
+      .bi-lightning-charge {
+        font-size: 1.75rem;
+        color: #ffc107; // Bootstrap warning color for energy theme
+      }
+    }
+    
+    // Mobile toggle button enhancements
+    .navbar-toggler {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 0.5rem;
+      
+      &:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.3);
+      }
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      
+      // Custom toggler icon for better visibility
+      .navbar-toggler-icon {
+        filter: brightness(1.1);
+      }
+    }
+  }
+  
+  // Language selector dropdown enhancements
+  .dropdown {
+    .btn {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background-color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.95);
+      
+      &:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.3);
+      }
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+      
+      &[aria-expanded="true"] {
+        border-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+    }
+    
+    .dropdown-menu {
+      // Enhanced dropdown styling for better UX and contrast
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+      border-radius: 0.5rem;
+      padding: 0.5rem 0;
+      background-color: #ffffff;
+      
+      .dropdown-item {
+        padding: 0.75rem 1rem;
+        transition: all 0.15s ease-in-out;
+        color: #212529; /* High contrast dark text */
+        
+        &:focus-visible {
+          outline: 2px solid #0d6efd;
+          outline-offset: -2px;
+          background-color: #cfe2ff;
+          color: #212529; /* Dark text for high contrast */
+        }
+        
+        &.active {
+          background-color: #0d6efd;
+          color: #ffffff;
+          font-weight: 500;
+          
+          &:hover {
+            background-color: #0b5ed7;
+            color: #ffffff;
+          }
+        }
+        
+        &:hover:not(.active) {
+          background-color: #e9ecef;
+          color: #212529; /* Dark text on light background for maximum contrast */
+        }
+        
+        // Flag emoji spacing
+        span:first-child {
+          font-size: 1.1em;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
+
+// Skip to content link (WCAG 2.2 AA requirement)
+.visually-hidden-focusable {
+  &:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+  
+  &:focus,
+  &:focus-within {
+    z-index: 9999;
+    padding: 0.5rem 1rem !important;
+    margin: 0.5rem !important;
+    clip: auto !important;
+    white-space: normal !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+// Responsive design adjustments
+@media (max-width: 991.98px) {
+  .app-header {
+    .navbar-collapse {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      
+      .navbar-nav {
+        .nav-link {
+          padding: 0.75rem 0;
+          border-radius: 0.25rem;
+          margin: 0.125rem 0;
+          
+          &:hover,
+          &:focus-visible {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+    
+    // Mobile language selector adjustments  
+    .dropdown {
+      margin-top: 1rem;
+      
+      .btn {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  
+  // Navbar layout improvements for centered navigation
+  .navbar-collapse {
+    // Flexbox layout for proper alignment
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    // Center navigation items
+    .navbar-nav.mx-auto {
+      @media (min-width: 992px) {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+    
+    // Right-align language selector
+    .navbar-nav.ms-auto {
+      @media (max-width: 991px) {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+// High contrast mode support (WCAG 2.2 AA)
+@media (prefers-contrast: high) {
+  .app-header {
+    .navbar {
+      --bs-navbar-color: #ffffff;
+      --bs-navbar-hover-color: #ffffff;
+      --bs-navbar-active-color: #ffffff;
+      
+      .nav-link {
+        &:focus-visible {
+          outline-width: 3px;
+          outline-color: #ffffff;
+        }
+        
+        &.active::after {
+          height: 3px;
+        }
+      }
+      
+      .navbar-toggler {
+        border-width: 3px;
+        
+        &:focus-visible {
+          outline-width: 3px;
+        }
+      }
+    }
+  }
+}
+
+// Reduced motion support (WCAG 2.2 AA)
+@media (prefers-reduced-motion: reduce) {
+  .app-header {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}

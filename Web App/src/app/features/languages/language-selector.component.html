@@ -1,0 +1,29 @@
+<!-- 
+  Language Selector Component Template
+  
+  ARCHITECTURAL DECISIONS:
+  - Uses generic DropdownComponent for consistent UI behavior
+  - Custom button content for language display with flag and name
+  - Proper ARIA labeling for accessibility
+  - Responsive design with mobile-friendly layout
+-->
+
+<app-dropdown
+  [buttonClass]="'btn btn-outline-light nav-link border-0 language-selector-btn'"
+  [ariaLabel]="'APP.LANGUAGE_SELECTOR' | translate"
+  [items]="availableLanguages()"
+  [getItemText]="getLanguageDisplayText"
+  [getItemKey]="getLanguageKey"
+  [isItemActive]="isLanguageActive"
+  [showIcons]="false"
+  [customButtonContent]="true"
+  [placement]="'bottom-end'"
+  (itemSelected)="onLanguageChange($event)"
+>
+  <!-- Custom button content with flag and language name -->
+  <div slot="button" class="d-flex align-items-center">
+    <i class="bi bi-translate me-1" aria-hidden="true"></i>
+    <span class="me-1" aria-hidden="true">{{ currentLanguage().flag }}</span>
+    <span class="d-none d-md-inline">{{ currentLanguage().name }}</span>
+  </div>
+</app-dropdown>

@@ -1,0 +1,15 @@
+<div class="card h-100" [ngClass]="cardClass">
+  @if (title) {
+    <div class="card-header">
+      <h5 class="card-title mb-0">{{ title }}</h5>
+    </div>
+  }
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+  @if (hasFooter) {
+    <div class="card-footer">
+      <ng-content select="[slot=footer]"></ng-content>
+    </div>
+  }
+</div>

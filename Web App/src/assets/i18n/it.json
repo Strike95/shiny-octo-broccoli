@@ -1,0 +1,138 @@
+{
+  "APP": {
+    "TITLE": "Dashboard Mercato Energetico",
+    "BRAND": "Mercato Energetico",
+    "DESCRIPTION": "Piattaforma di analisi dati per il trading energetico",
+    "LANGUAGE_SELECTOR": "Selettore lingua"
+  },
+  "NAVIGATION": {
+    "HOME": "Home",
+    "ELECTRICITY_PRICES": "Prezzi Elettricità",
+    "GREEN_CERTIFICATES": "Certificati Verdi",
+    "MARKET_ANALYSIS": "Analisi Mercato",
+    "MENU": "Menu",
+    "CLOSE_MENU": "Chiudi menu",
+    "SKIP_TO_CONTENT": "Vai al contenuto principale",
+    "MOBILE_EXPANDED": "Navigazione espansa",
+    "HOME_DESCRIPTION": "Dashboard principale con panoramica del mercato energetico",
+    "ELECTRICITY_PRICES_DESCRIPTION": "Prezzi dell'elettricità in tempo reale dai mercati europei",
+    "GREEN_CERTIFICATES_DESCRIPTION": "Dati e statistiche di trading dei certificati verdi",
+    "MARKET_ANALYSIS_DESCRIPTION": "Analisi avanzate del mercato e studi di correlazione"
+  },
+  "COMMON": {
+    "LOADING": "Caricamento...",
+    "ERROR": "Errore",
+    "VIEW_DETAILS": "Vedi Dettagli",
+    "HOME": "Home",
+    "BACK": "Indietro"
+  },
+  "HOME": {
+    "TITLE": "Dashboard Mercato Energetico",
+    "SUBTITLE": "Analisi dati di trading energetico in tempo reale",
+    "DESCRIPTION": "Monitora prezzi dell'elettricità, certificati verdi e tendenze di mercato con visualizzazione e analisi complete dei dati.",
+    "GET_STARTED": "Inizia",
+    "GET_STARTED_ARIA": "Inizia con l'analisi dei prezzi dell'elettricità",
+    "LEARN_MORE": "Scopri di Più",
+    "LEARN_MORE_ARIA": "Scopri di più sulle funzionalità della piattaforma",
+    "META_TITLE": "Dashboard Mercato Energetico - Dati di Trading in Tempo Reale",
+    "META_DESCRIPTION": "Monitora prezzi dell'elettricità, certificati verdi e tendenze di mercato con visualizzazione e analisi complete dei dati",
+    "QUICK_STATS": "Statistiche Rapide",
+    "STATS": {
+      "ELECTRICITY_DESCRIPTION": "Dati di mercato energetico in tempo reale",
+      "CERTIFICATES_DESCRIPTION": "Certificati rinnovabili attivi", 
+      "ANALYSIS_DESCRIPTION": "Indicatori di tendenza del mercato",
+      "LOADING_MESSAGE": "Caricamento statistiche di mercato...",
+      "ERROR_MESSAGE": "Impossibile caricare le statistiche di mercato"
+    },
+    "FEATURES": {
+      "TITLE": "Caratteristiche Principali",
+      "ELECTRICITY": {
+        "TITLE": "Prezzi Elettricità",
+        "DESCRIPTION": "Prezzi di mercato dell'elettricità in tempo reale dalle principali borse europee"
+      },
+      "CERTIFICATES": {
+        "TITLE": "Certificati Verdi", 
+        "DESCRIPTION": "Dati di trading dei certificati verdi e approfondimenti sul mercato delle energie rinnovabili"
+      },
+      "ANALYSIS": {
+        "TITLE": "Analisi di Mercato",
+        "DESCRIPTION": "Analisi avanzate e studi di correlazione tra i mercati energetici"
+      }
+    },
+    "CTA": {
+      "TITLE": "Pronto ad esplorare i dati del mercato energetico?",
+      "SUBTITLE": "Inizia ad analizzare le informazioni di trading energetico in tempo reale con la nostra dashboard completa.",
+      "START_ANALYSIS": "Inizia Analisi",
+      "START_ANALYSIS_ARIA": "Inizia analisi di mercato"
+    }
+  },
+  "ELECTRICITY_PRICES": {
+    "TITLE": "Prezzi Elettricità",
+    "DESCRIPTION": "Prezzi del mercato elettrico europeo nelle principali borse",
+    "META_TITLE": "Prezzi Elettricità - Dati Mercato Europeo",
+    "META_DESCRIPTION": "Prezzi dell'elettricità in tempo reale da IPEX, EPEX Germania, Nord Pool, OMEL e mercati EPEX Francia",
+    "LOADING_DATA": "Caricamento dati prezzi elettricità...",
+    "DATA_TABLE": "Dati Prezzi Elettricità",
+    "TABLE_ARIA_LABEL": "Tabella che mostra i prezzi dell'elettricità per anno e mercato",
+    "DATA_SOURCE": "Fonte dati: Borse elettriche europee",
+    "NO_DATA": "Nessun dato sui prezzi dell'elettricità disponibile",
+    "YEAR": "Anno",
+    "IPEX": "IPEX (Italia)",
+    "EPEX_GERMANY": "EPEX Germania",
+    "NORD_POOL": "Nord Pool",
+    "OMEL": "OMEL (Spagna)",
+    "EPEX_FRANCE": "EPEX Francia"
+  },
+  "GREEN_CERTIFICATES": {
+    "TITLE": "Certificati Verdi",
+    "DESCRIPTION": "Dati di trading dei certificati verdi e analisi del mercato delle energie rinnovabili",
+    "META_TITLE": "Certificati Verdi - Trading Energie Rinnovabili",
+    "META_DESCRIPTION": "Dati di trading dei certificati verdi, prezzi medi e analisi del mercato delle energie rinnovabili",
+    "LOADING_DATA": "Caricamento dati certificati verdi...",
+    "DATA_TABLE": "Dati Certificati Verdi",
+    "TABLE_ARIA_LABEL": "Tabella che mostra i dati di trading dei certificati verdi per anno",
+    "DATA_SOURCE": "Fonte dati: Piattaforme di trading certificati verdi",
+    "NO_DATA": "Nessun dato sui certificati verdi disponibile",
+    "YEAR": "Anno",
+    "AVG_PRICE": "Prezzo Medio",
+    "WEIGHTED_AVG_PRICE": "Prezzo Medio Ponderato",
+    "CVS_TRADED": "CV Scambiati",
+    "TOTAL_VALUE": "Valore Totale",
+    "SUMMARY": "Riepilogo",
+    "TOTAL_CVS": "CV Totali",
+    "TOTAL_TRADING_VALUE": "Valore Totale Trading",
+    "PRICE_RANGE": "Range Prezzi",
+    "YEARS_ACTIVE": "Anni Attivi"
+  },
+  "MARKET_ANALYSIS": {
+    "TITLE": "Analisi di Mercato",
+    "DESCRIPTION": "Analisi avanzate e studi di correlazione tra mercati dell'elettricità e dei certificati verdi",
+    "META_TITLE": "Analisi di Mercato - Approfondimenti Trading Energetico",
+    "META_DESCRIPTION": "Analisi avanzate e studi di correlazione tra mercati dell'elettricità e dei certificati verdi con visualizzazione completa dei dati",
+    "LOADING_DATA": "Caricamento dati analisi di mercato...",
+    "CORRELATION": "Correlazione Prezzi",
+    "PRICE_CORRELATION": "Prezzi Elettricità vs CV",
+    "DATA_YEARS": "Anni Dati",
+    "TOTAL_YEARS": "Anni Totali Disponibili",
+    "HIGH_CV_PERIODS": "Periodi CV Alti",
+    "ABOVE_80_EUR": "Periodi sopra €80/CV",
+    "MARKET_COMPARISON": "Confronto Mercato per Anno",
+    "SELECT_YEAR": "Seleziona Anno",
+    "MARKET": "Mercato",
+    "PRICE": "Prezzo",
+    "CV_PRICE": "Prezzo CV",
+    "COMBINED_DATA": "Dati Combinati",
+    "OVERLAPPING_DATA": "Dati Sovrapposti",
+    "HIGH_CV_PRICES": "Prezzi CV Alti"
+  },
+  "LANGUAGES": {
+    "ENGLISH": "Inglese",
+    "ITALIAN": "Italiano"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2024 Energy Market Dashboard. Tutti i diritti riservati.",
+    "PRIVACY": "Privacy",
+    "TERMS": "Termini",
+    "CONTACT": "Contatti"
+  }
+}

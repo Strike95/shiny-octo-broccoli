@@ -1,0 +1,151 @@
+/**
+ * Dropdown Component Styles
+ * 
+ * ARCHITECTURAL DECISIONS:
+ * - Consistent with Bootstrap design system
+ * - Accessible focus states and hover effects
+ * - Responsive design considerations
+ * - High contrast mode support
+ */
+
+/* Dropdown button styles */
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+  
+  /* Remove default Bootstrap dropdown-toggle caret */
+  &::after {
+    display: none;
+  }
+  
+  /* Focus states for accessibility */
+  &:focus-visible {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Disabled state */
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  /* Icon styling */
+  i {
+    font-size: 0.875rem;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Rotate chevron when dropdown is open */
+  &[aria-expanded="true"] i.bi-chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  background-color: #ffffff;
+  
+  /* Dropdown items */
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s ease-in-out;
+    color: #212529; /* High contrast text color */
+    
+    &:hover:not(.active) {
+      background-color: #e9ecef;
+      color: #212529; /* Dark text on light background for maximum contrast */
+    }
+    
+    &:focus-visible {
+      outline: 2px solid #0d6efd;
+      outline-offset: -2px;
+      background-color: #cfe2ff;
+      color: #212529; /* Dark text for high contrast */
+    }
+    
+    &.active {
+      background-color: #0d6efd;
+      color: #ffffff; /* High contrast white text on blue background */
+      
+      &:hover {
+        background-color: #0b5ed7; /* Darker blue on hover for active item */
+        color: #ffffff;
+      }
+      
+      &:focus-visible {
+        background-color: #0a58ca;
+        color: #ffffff;
+      }
+    }
+    
+    /* Icon spacing */
+    i {
+      font-size: 1rem;
+      
+      &.ms-auto {
+        margin-left: auto !important;
+      }
+    }
+  }
+  
+  /* Empty state text */
+  .dropdown-item-text {
+    padding: 0.5rem 1rem;
+    font-style: italic;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .dropdown-toggle {
+    border-width: 2px;
+    
+    &:focus-visible {
+      outline-width: 3px;
+    }
+  }
+  
+  .dropdown-menu {
+    border-width: 2px;
+    
+    .dropdown-item {
+      &:hover:not(.active) {
+        background-color: var(--bs-gray-200);
+        border: 1px solid var(--bs-gray-400);
+      }
+      
+      &.active {
+        border: 2px solid var(--bs-primary);
+      }
+    }
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-toggle,
+  .dropdown-item {
+    transition: none;
+  }
+  
+  .dropdown-toggle i {
+    transition: none;
+  }
+}

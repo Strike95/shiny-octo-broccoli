@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    @if (title) {
+      <caption>{{ title }}</caption>
+    }
+    <thead class="table-dark">
+      <tr>
+        @for (column of columns; track column.key) {
+          <th scope="col">{{ column.label }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of data; track row) {
+        <tr>
+          @for (column of columns; track column.key) {
+            <td>
+              @if (column.type === 'currency') {
+                {{ getValue(row, column.key) | number:'1.2-2' }} €
+              } @else if (column.type === 'number') {
+                {{ getValue(row, column.key) | number }}
+              } @else {
+                {{ getValue(row, column.key) }}
+              }
+            </td>
+          }
+        </tr>
+      }
+      @if (data.length === 0) {
+        <tr>
+          <td [attr.colspan]="columns.length" class="text-center text-muted">
+            No data available
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

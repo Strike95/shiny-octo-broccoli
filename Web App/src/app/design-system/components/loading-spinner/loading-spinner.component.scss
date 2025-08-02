@@ -1,0 +1,16 @@
+// LoadingSpinner component styles
+.spinner-border {
+  width: 2rem;
+  height: 2rem;
+  animation-duration: 0.75s;
+}
+
+.loading-container {
+  min-height: 200px;
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}

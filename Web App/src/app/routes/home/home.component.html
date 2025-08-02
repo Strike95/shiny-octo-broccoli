@@ -1,0 +1,132 @@
+<!-- Main content wrapper -->
+<main id="main-content" 
+      class="flex-grow-1" 
+      role="main"
+      [attr.aria-label]="'HOME.TITLE' | translate">
+
+  <!-- Quick stats section -->
+  <section class="py-5 bg-light" 
+           [attr.aria-labelledby]="'stats-title'">
+    <div class="container">
+      <h2 id="stats-title" 
+          class="h3 text-center mb-5 text-primary">
+        {{ 'HOME.QUICK_STATS' | translate }}
+      </h2>
+      
+      <!-- Loading state -->
+      @if (isLoading()) {
+        <div class="text-center py-5">
+          <output class="spinner-border text-primary">
+            <span class="visually-hidden">{{ 'COMMON.LOADING' | translate }}</span>
+          </output>
+          <p class="text-muted mt-3">{{ 'HOME.STATS.LOADING_MESSAGE' | translate }}</p>
+        </div>
+      }
+      
+      <!-- Error state -->
+      @else if (error()) {
+        <div class="alert alert-warning text-center" role="alert">
+          <i class="bi bi-exclamation-triangle me-2"></i>
+          <strong>{{ 'COMMON.ERROR' | translate }}:</strong> {{ error() }}
+        </div>
+      }
+      
+      <!-- Stats cards -->
+      @else {
+        <div class="row g-4">
+          <!-- Stat cards con accessibilità -->
+          <div class="col-md-4" *ngFor="let stat of quickStats(); trackBy: trackByStatId">
+            <div class="card h-100 text-center shadow-sm stat-card"
+                 [attr.aria-labelledby]="'stat-' + stat.id + '-title'"
+                 [attr.aria-describedby]="'stat-' + stat.id + '-desc'">
+              <div class="card-body">
+                <div class="stat-icon mb-3" [attr.aria-hidden]="true">
+                  <i [class]="stat.icon" class="fs-1 text-primary"></i>
+                </div>
+                <h3 [id]="'stat-' + stat.id + '-title'" 
+                    class="card-title h4">
+                  {{ stat.title | translate }}
+                </h3>
+                <p [id]="'stat-' + stat.id + '-desc'" 
+                   class="card-text text-muted">
+                  {{ stat.description | translate }}
+                </p>
+                <div class="stat-value text-primary fw-bold fs-3" 
+                     [attr.aria-label]="'Statistical value: ' + stat.value">
+                  {{ stat.value }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Features section -->
+  <section id="features" 
+           class="py-5" 
+           [attr.aria-labelledby]="'features-title'">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center mb-5">
+          <h2 id="features-title" 
+              class="display-6 fw-bold mb-4">
+            {{ 'HOME.FEATURES.TITLE' | translate }}
+          </h2>
+          <p class="lead text-muted">
+            {{ 'HOME.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Feature cards -->
+        <div class="col-lg-4" *ngFor="let feature of features; trackBy: trackByFeatureId">
+          <div class="card h-100 border-0 shadow-sm feature-card"
+               [attr.aria-labelledby]="'feature-' + feature.id + '-title'"
+               [attr.aria-describedby]="'feature-' + feature.id + '-desc'">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon mb-4" [attr.aria-hidden]="true">
+                <i [class]="feature.icon" class="fs-1 text-primary"></i>
+              </div>
+              <h3 [id]="'feature-' + feature.id + '-title'" 
+                  class="card-title h4 mb-3">
+                {{ feature.title | translate }}
+              </h3>
+              <p [id]="'feature-' + feature.id + '-desc'" 
+                 class="card-text text-muted mb-4">
+                {{ feature.description | translate }}
+              </p>
+              <a [routerLink]="feature.route" 
+                 class="btn btn-outline-primary"
+                 [attr.aria-label]="getFeatureAriaLabel(feature)">
+                <i class="bi bi-arrow-right me-1" aria-hidden="true"></i>
+                {{ 'COMMON.VIEW_DETAILS' | translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action section -->
+  <section class="py-5 bg-primary text-white" 
+           [attr.aria-labelledby]="'cta-title'">
+    <div class="container text-center">
+      <h2 id="cta-title" class="h3 mb-4">
+        {{ 'HOME.CTA.TITLE' | translate }}
+      </h2>
+      <p class="lead mb-4">
+        {{ 'HOME.CTA.SUBTITLE' | translate }}
+      </p>
+      <a routerLink="/market-analysis" 
+         class="btn btn-light btn-lg px-4 py-3"
+         [attr.aria-label]="'HOME.CTA.START_ANALYSIS_ARIA' | translate">
+        <i class="bi bi-bar-chart me-2" aria-hidden="true"></i>
+        {{ 'HOME.CTA.START_ANALYSIS' | translate }}
+      </a>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-center align-items-center" [style.height.px]="height">
+  <div class="spinner-border" [ngClass]="spinnerClass" role="status">
+    <span class="visually-hidden">{{ message }}</span>
+  </div>
+  @if (showMessage) {
+    <span class="ms-3">{{ message }}</span>
+  }
+</div>

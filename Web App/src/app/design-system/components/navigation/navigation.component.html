@@ -1,0 +1,41 @@
+<!-- 
+  Navigation Template
+  
+  ARCHITECTURAL DECISIONS:
+  - Semantic HTML with proper navigation landmarks
+  - ARIA attributes for screen reader accessibility
+  - Bootstrap utility classes for responsive behavior
+  - Angular control flow (@for) for performance optimization
+  - RouterLinkActive for active state management
+-->
+
+<!-- Main navigation links -->
+<nav aria-label="Main navigation">
+  <ul class="navbar-nav me-auto">
+  @for (item of navigationItems(); track item.route) {
+    <li class="nav-item">
+      <a 
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+        class="nav-link px-3 py-2"
+        [attr.aria-current]="item.route === '/' ? 'page' : null"
+        (click)="onNavigationItemClick(item.route)"
+      >
+        <i [class]="item.icon" class="me-2" aria-hidden="true"></i>
+        <span>{{ item.labelKey | translate }}</span>
+      </a>
+    </li>
+  }
+</ul>
+</nav>
+
+<!-- Mobile menu toggle indicator -->
+@if (isMobileMenuExpanded()) {
+  <div class="d-lg-none mt-3 pt-3 border-top border-light border-opacity-25">
+    <div class="navbar-text text-white-50 small">
+      <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+      <span>{{ 'NAVIGATION.MOBILE_EXPANDED' | translate }}</span>
+    </div>
+  </div>
+}

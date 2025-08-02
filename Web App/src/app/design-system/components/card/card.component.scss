@@ -1,0 +1,19 @@
+// Card component styles
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-title {
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+.card-header {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+  border-bottom: 1px solid rgba(var(--bs-primary-rgb), 0.1);
+}

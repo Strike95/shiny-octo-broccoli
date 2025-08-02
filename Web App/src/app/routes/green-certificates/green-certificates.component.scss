@@ -1,0 +1,55 @@
+/**
+ * Styles for Green Certificates component
+ * Design choice: Minimal styling with Bootstrap foundation and green theme
+ * Implements WCAG 2.2 AA compliance through accessible color contrasts
+ */
+
+.display-1 {
+  opacity: 0.7;
+}
+
+/* Accessibility enhancements */
+@media (prefers-contrast: high) {
+  .display-1 {
+    opacity: 1;
+  }
+  
+  .text-muted {
+    color: var(--bs-dark) !important;
+  }
+  
+  .text-success {
+    color: var(--bs-success) !important;
+    font-weight: 600;
+  }
+}
+
+/* Focus management for keyboard navigation */
+.card:focus-within {
+  outline: 2px solid var(--bs-success);
+  outline-offset: 2px;
+}
+
+/* Responsive design enhancements */
+@media (max-width: 767.98px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+  
+  .display-1 {
+    font-size: 3rem;
+  }
+}
+
+/* Green theme enhancements */
+.text-success {
+  color: #198754 !important;
+}
+
+/* Print styles for accessibility */
+@media print {
+  .text-success {
+    color: #000 !important;
+    font-weight: bold;
+  }
+}

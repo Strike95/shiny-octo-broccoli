@@ -1,0 +1,80 @@
+<!-- 
+  Dropdown Template
+  
+  ARCHITECTURAL DECISIONS:
+  - Uses ng-bootstrap for consistent Bootstrap behavior
+  - Semantic HTML with proper ARIA attributes
+  - Flexible content projection through @if conditions
+  - Keyboard navigation support built-in
+-->
+
+<div class="dropdown" ngbDropdown [placement]="placement()">
+  <!-- Dropdown Toggle Button -->
+  <button 
+    class="dropdown-toggle"
+    [class]="computedButtonClass()"
+    [id]="dropdownId()"
+    ngbDropdownToggle
+    [attr.aria-label]="ariaLabel()"
+    [attr.aria-expanded]="isOpen()"
+    [disabled]="disabled()"
+    (click)="onDropdownOpen()"
+  >
+    <!-- Custom button content slot -->
+    @if (customButtonContent()) {
+      <ng-content select="[slot=button]"></ng-content>
+    } @else {
+      <!-- Default button text -->
+      <span>{{ buttonText() }}</span>
+    }
+    
+    <!-- Dropdown chevron icon -->
+    <i class="bi bi-chevron-down ms-1" aria-hidden="true"></i>
+  </button>
+  
+  <!-- Dropdown Menu -->
+  <div 
+    class="dropdown-menu" 
+    ngbDropdownMenu
+    [attr.aria-labelledby]="dropdownId()"
+    (hidden)="onDropdownClose()"
+  >
+    <!-- Dropdown Items -->
+    @for (item of items(); track getItemKey()(item)) {
+      <button
+        class="dropdown-item d-flex align-items-center"
+        [class.active]="isItemActive()(item)"
+        [attr.aria-selected]="isItemActive()(item)"
+        (click)="onItemSelect(item)"
+        type="button"
+      >
+        <!-- Item Icon -->
+        @if (showIcons()) {
+          <i 
+            [class]="getItemIcon()(item)" 
+            class="me-2" 
+            aria-hidden="true"
+          ></i>
+        }
+        
+        <!-- Item Text -->
+        <span>{{ getItemText()(item) }}</span>
+        
+        <!-- Active Indicator -->
+        @if (showActiveIndicator() && isItemActive()(item)) {
+          <i class="bi bi-check ms-auto" aria-hidden="true"></i>
+        }
+      </button>
+    }
+    
+    <!-- Empty State -->
+    @if (items().length === 0) {
+      <div class="dropdown-item-text text-muted">
+        <ng-content select="[slot=empty]"></ng-content>
+      </div>
+    }
+    
+    <!-- Custom footer content -->
+    <ng-content select="[slot=footer]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+/**
+ * Styles for Language Selector component
+ * Design choice: Bootstrap-based with accessibility customizations
+ * Implements WCAG 2.2 AA compliance through:
+ * - Touch-friendly minimum sizes
+ * - High contrast mode support
+ * - Focus management
+ * - Reduced motion support
+ */
+
+/* Flag icons with responsive sizing */
+.flag-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Dropdown button responsive design */
+.dropdown-toggle {
+  min-width: 2.5rem; /* Touch-friendly minimum size per WCAG */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* More specific selector to override Bootstrap btn-outline-light styles */
+:host ::ng-deep .btn-outline-light.dropdown-toggle:hover,
+:host ::ng-deep .btn-outline-light.dropdown-toggle:focus {
+  background-color: #ffffff !important; /* Solid white background */
+  border-color: #dee2e6 !important; /* Light gray border */
+  color: #212529 !important; /* Dark text for high contrast */
+  transform: translateY(-1px);
+  
+  /* Force dark color for all child elements */
+  * {
+    color: #212529 !important;
+  }
+  
+  /* Specific override for icons and text */
+  i, span, .bi {
+    color: #212529 !important;
+  }
+}
+
+
+/* Fallback hover and focus states for accessibility */
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.9) !important; /* More opaque white background */
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: #212529 !important; /* Dark text for high contrast on light background */
+  transform: translateY(-1px);
+  
+  /* Ensure all child elements have dark color */
+  i,
+  span {
+    color: #212529 !important;
+  }
+}
+
+/* Focus visible for keyboard navigation WCAG 2.2 AA */
+.dropdown-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  min-width: 8rem;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown item styling with accessible states */
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  transition: background-color 0.15s ease-in-out;
+  color: #212529; /* Ensure dark text by default for high contrast */
+  background-color: #ffffff; /* Ensure white background by default */
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-primary) !important; /* Force primary background */
+  color: #ffffff !important; /* Force white text for high contrast */
+}
+
+.dropdown-item.active {
+  background-color: var(--bs-primary) !important; /* Force primary background */
+  color: #ffffff !important; /* Force white text for high contrast */
+  font-weight: 500;
+}
+
+/* Responsive breakpoints for language text */
+@media (max-width: 767.98px) {
+  .dropdown-toggle {
+    min-width: 3rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* High contrast mode support for accessibility */
+@media (prefers-contrast: high) {
+  .dropdown-toggle {
+    border-width: 2px;
+  }
+  
+  .dropdown-item {
+    border: 1px solid transparent;
+    
+    &:hover,
+    &:focus {
+      background-color: var(--bs-primary) !important;
+      color: #ffffff !important;
+      border: 2px solid #ffffff;
+    }
+    
+    &.active {
+      background-color: var(--bs-primary) !important;
+      color: #ffffff !important;
+      border: 2px solid #ffffff;
+    }
+  }
+}
+
+/* Reduced motion support per WCAG */
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-toggle,
+  .dropdown-item {
+    transition: none;
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "APP": {
+    "TITLE": "Energy Market Dashboard",
+    "BRAND": "Energy Market",
+    "DESCRIPTION": "Energy trading data analysis platform",
+    "LANGUAGE_SELECTOR": "Language selector"
+  },
+  "NAVIGATION": {
+    "HOME": "Home",
+    "ELECTRICITY_PRICES": "Electricity Prices",
+    "GREEN_CERTIFICATES": "Green Certificates",
+    "MARKET_ANALYSIS": "Market Analysis",
+    "MENU": "Menu",
+    "CLOSE_MENU": "Close menu",
+    "SKIP_TO_CONTENT": "Skip to main content",
+    "MOBILE_EXPANDED": "Navigation expanded",
+    "HOME_DESCRIPTION": "Main dashboard with energy market overview",
+    "ELECTRICITY_PRICES_DESCRIPTION": "Real-time electricity prices from European markets",
+    "GREEN_CERTIFICATES_DESCRIPTION": "Green certificates trading data and statistics",
+    "MARKET_ANALYSIS_DESCRIPTION": "Advanced market analysis and correlation studies"
+  },
+  "COMMON": {
+    "LOADING": "Loading...",
+    "ERROR": "Error",
+    "VIEW_DETAILS": "View Details",
+    "HOME": "Home",
+    "BACK": "Back"
+  },
+  "HOME": {
+    "TITLE": "Energy Market Dashboard",
+    "SUBTITLE": "Real-time energy trading data analysis",
+    "DESCRIPTION": "Monitor electricity prices, green certificates, and market trends with comprehensive data visualization and analysis.",
+    "GET_STARTED": "Get Started",
+    "GET_STARTED_ARIA": "Get started with electricity prices analysis",
+    "LEARN_MORE": "Learn More",
+    "LEARN_MORE_ARIA": "Learn more about platform features",
+    "META_TITLE": "Energy Market Dashboard - Real-time Trading Data",
+    "META_DESCRIPTION": "Monitor electricity prices, green certificates, and market trends with comprehensive data visualization and analysis",
+    "QUICK_STATS": "Quick Statistics",
+    "STATS": {
+      "ELECTRICITY_DESCRIPTION": "Real-time energy market data",
+      "CERTIFICATES_DESCRIPTION": "Active renewable certificates", 
+      "ANALYSIS_DESCRIPTION": "Market trend indicators",
+      "LOADING_MESSAGE": "Loading market statistics...",
+      "ERROR_MESSAGE": "Unable to load market statistics"
+    },
+    "FEATURES": {
+      "TITLE": "Platform Features",
+      "ELECTRICITY_PRICES": {
+        "TITLE": "Electricity Prices",
+        "DESCRIPTION": "Real-time electricity market prices from major European exchanges"
+      },
+      "GREEN_CERTIFICATES": {
+        "TITLE": "Green Certificates",
+        "DESCRIPTION": "Green certificate trading data and renewable energy market insights"
+      },
+      "MARKET_ANALYSIS": {
+        "TITLE": "Market Analysis",
+        "DESCRIPTION": "Advanced analytics and correlation studies across energy markets"
+      },
+      "ELECTRICITY": {
+        "TITLE": "Electricity Prices",
+        "DESCRIPTION": "Real-time electricity market prices from major European exchanges"
+      },
+      "CERTIFICATES": {
+        "TITLE": "Green Certificates", 
+        "DESCRIPTION": "Green certificate trading data and renewable energy market insights"
+      },
+      "ANALYSIS": {
+        "TITLE": "Market Analysis",
+        "DESCRIPTION": "Advanced analytics and correlation studies across energy markets"
+      }
+    },
+    "CTA": {
+      "TITLE": "Ready to explore energy market data?",
+      "SUBTITLE": "Start analyzing real-time energy trading information with our comprehensive dashboard.",
+      "START_ANALYSIS": "Start Analysis",
+      "START_ANALYSIS_ARIA": "Start market analysis"
+    }
+  },
+  "ELECTRICITY_PRICES": {
+    "TITLE": "Electricity Prices",
+    "DESCRIPTION": "European electricity market prices across major exchanges",
+    "META_TITLE": "Electricity Prices - European Market Data",
+    "META_DESCRIPTION": "Real-time electricity prices from IPEX, EPEX Germany, Nord Pool, OMEL, and EPEX France markets",
+    "LOADING_DATA": "Loading electricity prices data...",
+    "DATA_TABLE": "Electricity Prices Data",
+    "TABLE_ARIA_LABEL": "Table showing electricity prices by year and market",
+    "DATA_SOURCE": "Data source: European electricity exchanges",
+    "NO_DATA": "No electricity prices data available",
+    "YEAR": "Year",
+    "IPEX": "IPEX (Italy)",
+    "EPEX_GERMANY": "EPEX Germany",
+    "NORD_POOL": "Nord Pool",
+    "OMEL": "OMEL (Spain)",
+    "EPEX_FRANCE": "EPEX France"
+  },
+  "GREEN_CERTIFICATES": {
+    "TITLE": "Green Certificates",
+    "DESCRIPTION": "Green certificate trading data and renewable energy market analysis",
+    "META_TITLE": "Green Certificates - Renewable Energy Trading",
+    "META_DESCRIPTION": "Green certificate trading data, average prices, and renewable energy market analysis",
+    "LOADING_DATA": "Loading green certificates data...",
+    "DATA_TABLE": "Green Certificates Data",
+    "TABLE_ARIA_LABEL": "Table showing green certificate trading data by year",
+    "DATA_SOURCE": "Data source: Green certificate trading platforms",
+    "NO_DATA": "No green certificates data available",
+    "YEAR": "Year",
+    "AVG_PRICE": "Average Price",
+    "WEIGHTED_AVG_PRICE": "Weighted Average Price",
+    "CVS_TRADED": "CVs Traded",
+    "TOTAL_VALUE": "Total Value",
+    "TOTAL_VALUE_INCL_VAT": "Total Value (VAT incl.)",
+    "TOTAL_CVS": "Total CVs Traded",
+    "YEARS_ACTIVE": "Years Active"
+  },
+  "MARKET_ANALYSIS": {
+    "TITLE": "Market Analysis",
+    "DESCRIPTION": "Advanced analytics and correlation studies between electricity and green certificate markets",
+    "META_TITLE": "Market Analysis - Energy Trading Insights",
+    "META_DESCRIPTION": "Advanced analytics and correlation studies between electricity and green certificate markets with comprehensive data visualization",
+    "LOADING_DATA": "Loading market analysis data...",
+    "CORRELATION": "Price Correlation",
+    "PRICE_CORRELATION": "Electricity Prices vs CVs",
+    "DATA_YEARS": "Data Years",
+    "TOTAL_YEARS": "Total Years Available",
+    "HIGH_CV_PERIODS": "High CV Periods",
+    "ABOVE_80_EUR": "Periods above €80/CV",
+    "MARKET_COMPARISON": "Market Comparison by Year",
+    "SELECT_YEAR": "Select Year",
+    "MARKET": "Market",
+    "PRICE": "Price",
+    "COMBINED_DATA": "Combined Market Data",
+    "YEAR": "Year",
+    "SHOWING_RECENT": "Showing recent data",
+    "TOTAL_RECORDS": "total records",
+    "HIGH_CV_ANALYSIS": "High CV Price Analysis",
+    "HIGH_CV_DESCRIPTION": "Analysis of periods when green certificate prices exceeded €80/CV"
+  },
+  "HEADER": {
+    "SKIP_TO_CONTENT": "Skip to main content",
+    "TOGGLE_NAVIGATION": "Toggle navigation",
+    "LANGUAGE_SELECTOR": "Language selector"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2025 Energy Market Dashboard. All rights reserved.",
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "Terms of Service",
+    "CONTACT": "Contact Us"
+  }
+}
