@@ -1,5 +1,5 @@
 import { SolutionStep } from '../interfaces/solution-step.interface';
-import { VaccinationState } from '../models/vaccination.state';
+import { VaccinationState } from '../models/vaccinationState.model.';
 import { APP_CONFIG } from '../constants/app-config.constants';
 import { LOG_PREFIXES } from '../constants/log-prefixes.constants';
 import { UI_ELEMENTS } from '../constants/ui-elements.constants';

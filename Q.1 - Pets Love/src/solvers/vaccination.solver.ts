@@ -1,6 +1,6 @@
 import { ISolver } from '../interfaces/solver.interface';
 import { SolutionStep } from '../interfaces/solution-step.interface';
-import { VaccinationState } from '../models/vaccination.state';
+import { VaccinationState } from '../models/vaccinationState.model.';
 import { APP_CONFIG } from '../constants/app-config.constants';
 
 /**
